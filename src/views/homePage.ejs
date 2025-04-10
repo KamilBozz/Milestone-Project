@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://kit.fontawesome.com/590d35ad8f.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      padding: 1rem;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+    }
+
+    main {
+      background-color: gainsboro;
+      padding-left: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .user {
+      background-color: white;
+      margin-bottom: 1rem;
+      max-width: 15rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      border-radius: 5px;
+      padding-right: 2rem;
+    }
+
+    .info {
+      padding-left: 1rem;
+    }
+
+    .fa-instagram {
+      font-size: 50px;
+      padding-left: 1rem;
+      padding-top: 1rem;
+    }
+
+    body {
+      border: 1px solid gray;
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .buttons {
+      padding-top: 1rem;
+    }
+
+    form {
+      padding-bottom: .5rem;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <i class="fa-brands fa-instagram"></i>
+  </header>
+  <main>
+    <h1>Users</h1>
+    <%- users.map(user => `
+      <section class="user">
+        <img src="/photos?user=${user.username}&image=${user.profile}" alt="${user.username} profile picture">
+        <div class="buttons">
+          <!-- Upload Button -->
+          <form action="/images" method="POST" enctype="multipart/form-data">
+            <input id="file-${user.username}" type="file" name="image" accept="image/png" style="display:none;" onchange="this.form.submit()">
+            <button type="button" onclick="document.getElementById('file-${user.username}').click()">Upload</button>
+            <input type="hidden" name="user" value="${user.username}">
+          </form>
+          <!-- Username Button with Link -->
+          <a href="/feed?username=${user.username}">
+            <button type="button">${user.username}</button>
+          </a>
+        </div>
+      </section>
+    `).join('') %>
+  </main>
+</body>
+</html>

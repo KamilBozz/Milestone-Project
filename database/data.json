@@ -1,0 +1,34 @@
+[
+  {
+    "id": "90bf10a3-c9fb-406a-a35a-3e4a8db0fbf8",
+    "description": "welcome to my profile!",
+    "username": "john123",
+    "stats": {
+      "posts": 3,
+      "followers": 30,
+      "following": 30
+    },
+    "profile": "profile.jpeg",
+    "photos": [
+      "pic1.png",
+      "pic2.png",
+      "1744323592940_Untitled (6).png"
+    ]
+  },
+  {
+    "id": "cb506c7d-1c2f-4ce8-a56f-d45f16bf34cf",
+    "description": "Hi there!",
+    "username": "sandra123",
+    "stats": {
+      "posts": 3,
+      "followers": 30,
+      "following": 30
+    },
+    "profile": "profile.jpeg",
+    "photos": [
+      "pic1.png",
+      "pic2.png",
+      "1744323503952_Untitled (7).png"
+    ]
+  }
+]
